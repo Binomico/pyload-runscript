@@ -18,7 +18,6 @@ fi
 PATH=/opt/bin:/opt/sbin:/bin:/usr/bin
 PREFIX="/share/Public"            	# dein "Home-Verzeichnis" - ANPASSEN!
 RUNSCRP=${PREFIX}/runscript.sh    	# Pfad zum runscript 
-UNRARALL=${PREFIX}/unrarscript    	# Pfad zum unrarscript 
 DESTINATION=/share/Lichtspielhaus/   	# dein Downloadverzeichnis - ANPASSEN!
 DESTIS="/share/Lichtspielhaus/SERIEN"  	# Serien-Verzeichnis - ANPASSEN!
 LOGFILE=${PREFIX}/LOG         	  	# Logfile-Pfad
@@ -72,24 +71,18 @@ fi
 
 if [ ! -f $RUNSCRP ]; then
 cd "$PREFIX"
-wget http://pyload-runscript.googlecode.com/files/runscript.sh
+wget https://github.com/Binomico/pyload-runscript/blob/master/runscript.sh
 chmod +x runscript.sh
-fi
-
-if [ ! -f $UNRARALL ]; then
-cd "$PREFIX"
-wget http://pyload-runscript.googlecode.com/files/unrarscript
-chmod +x unrarscript
 fi
 
 if [ ! -f $SERIES ]; then
 cd "$PREFIX"
-wget http://pyload-runscript.googlecode.com/files/SERIES
+touch SERIEN
 fi
 
 if [ ! -f $DELNAME ]; then
 cd "$PREFIX"
-wget http://pyload-runscript.googlecode.com/files/DELNAME
+touch DELNAME
 fi
 
 if [ ! -f $PASSWORDS ]; then
