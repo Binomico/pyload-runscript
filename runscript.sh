@@ -300,7 +300,7 @@ cd "$UF_FOLDER"
 find `$UF_FOLDER/`* -type d -maxdepth 1 -print | while read FILE; do
   echo ""$NR" `date` --- mv "$FILE" "$DESTINATION"" >> $LOGFILE
   touch "$FILE"; mv "$FILE" "$DESTINATION"
-  (echo "Subject: "$FILE" Download fertig"; echo "From: sven.holstein@gmail.com"; echo "To: Me <sven.holstein@gmail.com>"; echo ""; echo ""$FILE" ist da") | /usr/sbin/ssmtp sven.holstein@gmail.com
+  (echo "Subject: "$FILE" Download fertig"; echo "From: mail@gmail.com"; echo "To: Me <mail@gmail.com>"; echo ""; echo ""$FILE" ist da") | /usr/sbin/ssmtp mail@gmail.com
 done
 echo ""$NR" *** Scriptende ***" >> $LOGFILE
 echo ""$NR" -----------------------------------" >>$LOGFILE
@@ -322,7 +322,7 @@ do
 		  if [ $? = "0" ] ; then
 		    echo ""$NR" *** Scriptende SERIEN ***" >> $LOGFILE
 		    echo ""$NR" -----------------------------------" >>$LOGFILE
-			  (echo "Subject: "$OMEGA" Serien-Download fertig"; echo "From: sven.holstein@gmail.com"; echo "To: Me <sven.holstein@gmail.com>"; echo ""; echo ""$OMEGA" ist da") | /usr/sbin/ssmtp sven.holstein@gmail.com 
+			  (echo "Subject: "$OMEGA" Serien-Download fertig"; echo "From: mail@gmail.com"; echo "To: Me <mail@gmail.com>"; echo ""; echo ""$OMEGA" ist da") | /usr/sbin/ssmtp mail@gmail.com 
   	  fi
   done
 done
